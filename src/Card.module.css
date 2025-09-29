@@ -1,0 +1,29 @@
+.cardImageWrapper {
+  position: relative;
+  width: 150px; /* exact card width */
+  margin: 0 auto;
+}
+
+.cardImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  transition: transform 0.15s ease;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.05); /* only the main image scales */
+}
+
+.rarityBadge {
+  position: absolute;
+  top: -6px; /* nudged above the card */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 10px;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 2;
+}

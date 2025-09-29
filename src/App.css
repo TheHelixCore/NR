@@ -1,42 +1,169 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: #252525;
+  /* background-color: #1C1C1C; */
+  color: #eee;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center; /* horizontal centering */
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center children horizontally */
+  padding: 20px;
+  max-width: 1400px;
+  width: 95%;
+  margin-top: auto;    /* pushes container to vertical center if possible */
+  margin-bottom: auto; /* same */
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.controls {
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+button {
+  background: #222;
+  color: #eee;
+  border: 1px solid #555;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s, transform 0.2s;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover {
+  background: #1C1C1C;
+  transform: scale(1.05);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+.statusIcon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 2;
+  pointer-events: none; /* allows clicks on the card */
+}
+
+.rarityBadge {
+  width: 42px;  /* your target size */
+  height: 10px; /* your target size */
+  margin-bottom: 4px;
 }
 
 .card {
-  padding: 2em;
+  position: relative;
+  background: #1C1C1C;;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  padding: 6px;
+  transition: transform 0.2s;
 }
 
-.read-the-docs {
-  color: #888;
+.card:hover {
+  transform: scale(1.05);
 }
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+  color: #eee;
+}
+
+.points {
+  font-size: 1.5rem;
+  color: #ccc;
+}
+
+.changelog {
+  margin-top: 40px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.changelog h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.changelog-entry h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.changelog-entry ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nrStatusIcon {
+  position: absolute;
+  top: 5px;    /* distance from top of card image */
+  right: 5px;  /* distance from right of card image */
+  width: 40px;
+  height: 40px;
+  z-index: 10; /* ensure it overlays above everything */
+  pointer-events: none; /* click-through */
+}
+
+.rarityIcon {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+}
+
+.cardImageContainer {
+  position: relative;
+  width: 100%;
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
